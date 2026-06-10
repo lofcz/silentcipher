@@ -173,6 +173,10 @@ class Model():
 
         """
 
+        if isinstance(orig, torch.Tensor):
+            orig = orig.detach().cpu().numpy()
+        if isinstance(recon, torch.Tensor):
+            recon = recon.detach().cpu().numpy()
         rms1 = ((np.mean(orig ** 2)) ** 0.5)
         rms2 = ((np.mean((orig - recon) ** 2)) ** 0.5)
         sdr = 20 * np.log10(rms1 / rms2)

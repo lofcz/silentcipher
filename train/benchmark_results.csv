@@ -1,0 +1,51 @@
+attack,message_match,bit_accuracy,confidence
+no_attack,True,1.000,0.978
+GN_40dB,True,1.000,0.911
+50C,True,1.000,0.952
+EQ_15dB,True,1.000,0.971
+Q_float16,True,1.000,0.975
+TJ,True,1.000,0.949
+RS,True,1.000,0.660
+mp3_64k,True,1.000,0.806
+mp3_128k,True,1.000,0.952
+mp3_256k,True,1.000,0.978
+ogg_64k,True,1.000,0.898
+ogg_128k,True,1.000,0.971
+ogg_256k,False,error,"Encoding failed. ffmpeg/avlib returned error code: 4294967274
+
+Command:['ffmpeg', '-y', '-f', 'wav', '-i', 'C:\\Users\\MSTAGL~1\\AppData\\Local\\Temp\\tmp5srxf1kz', '-acodec', 'libvorbis', '-b:a', '256k', '-f', 'ogg', 'C:\\Users\\MSTAGL~1\\AppData\\Local\\Temp\\tmphgq0grps']
+
+Output from ffmpeg/avlib:
+
+ffmpeg version 8.1.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers
+  built with gcc 15.2.0 (Rev13, Built by MSYS2 project)
+  configuration: --enable-gpl --enable-version3 --enable-static --disable-w32threads --disable-autodetect --enable-cairo --enable-fontconfig --enable-iconv --enable-gnutls --enable-lcms2 --enable-libxml2 --enable-gmp --enable-bzlib --enable-lzma --enable-libsnappy --enable-zlib --enable-librist --enable-libsrt --enable-libssh --enable-libzmq --enable-avisynth --enable-libbluray --enable-libcaca --enable-libdvdnav --enable-libdvdread --enable-sdl2 --enable-libaribb24 --enable-libaribcaption --enable-libdav1d --enable-libdavs2 --enable-libopenjpeg --enable-libquirc --enable-libuavs3d --enable-libxevd --enable-libzvbi --enable-liboapv --enable-libqrencode --enable-librav1e --enable-libsvtav1 --enable-libvvenc --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxavs2 --enable-libxeve --enable-libxvid --enable-libaom --enable-libjxl --enable-libsvtjpegxs --enable-libvpx --enable-mediafoundation --enable-libass --enable-frei0r --enable-libfreetype --enable-libfribidi --enable-libharfbuzz --enable-liblensfun --enable-libvidstab --enable-libvmaf --enable-libzimg --enable-amf --enable-cuda-llvm --enable-cuvid --enable-dxva2 --enable-d3d11va --enable-d3d12va --enable-ffnvcodec --enable-libvpl --enable-nvdec --enable-nvenc --enable-vaapi --enable-libshaderc --enable-vulkan --enable-libplacebo --enable-opencl --enable-libcdio --enable-openal --enable-libgme --enable-libmodplug --enable-libopenmpt --enable-libopencore-amrwb --enable-libmp3lame --enable-libshine --enable-libtheora --enable-libtwolame --enable-libvo-amrwbenc --enable-libcodec2 --enable-libilbc --enable-libgsm --enable-liblc3 --enable-libopencore-amrnb --enable-libopus --enable-libspeex --enable-libvorbis --enable-ladspa --enable-libbs2b --enable-libflite --enable-libmysofa --enable-librubberband --enable-libsoxr --enable-chromaprint --enable-whisper
+  libavutil      60. 26.101 / 60. 26.101
+  libavcodec     62. 28.101 / 62. 28.101
+  libavformat    62. 12.101 / 62. 12.101
+  libavdevice    62.  3.101 / 62.  3.101
+  libavfilter    11. 14.101 / 11. 14.101
+  libswscale      9.  5.101 /  9.  5.101
+  libswresample   6.  3.101 /  6.  3.101
+[aist#0:0/pcm_s16le @ 000002064d36d800] Guessed Channel Layout: mono
+Input #0, wav, from 'C:\Users\MSTAGL~1\AppData\Local\Temp\tmp5srxf1kz':
+  Duration: 00:00:15.00, bitrate: 512 kb/s
+  Stream #0:0: Audio: pcm_s16le ([1][0][0][0] / 0x0001), 32000 Hz, mono, s16, 512 kb/s
+Stream mapping:
+  Stream #0:0 -> #0:0 (pcm_s16le (native) -> vorbis (libvorbis))
+Press [q] to stop, [?] for help
+[libvorbis @ 000002064d3ae980] encoder setup failed
+[aost#0:0/libvorbis @ 000002064d381600] [enc:libvorbis @ 000002064d3abf40] Error while opening encoder - maybe incorrect parameters such as bit_rate, rate, width or height.
+[af#0:0 @ 000002064d378000] Error sending frames to consumers: Invalid argument
+[af#0:0 @ 000002064d378000] Task finished with error code: -22 (Invalid argument)
+[af#0:0 @ 000002064d378000] Terminating thread with return code -22 (Invalid argument)
+[aost#0:0/libvorbis @ 000002064d381600] [enc:libvorbis @ 000002064d3abf40] Could not open encoder before EOF
+[aost#0:0/libvorbis @ 000002064d381600] Task finished with error code: -22 (Invalid argument)
+[aost#0:0/libvorbis @ 000002064d381600] Terminating thread with return code -22 (Invalid argument)
+[out#0/ogg @ 000002064d2e4b80] Nothing was written into output file, because at least one of its streams received no packets.
+size=       0KiB time=N/A bitrate=N/A speed=N/A elapsed=0:00:00.01    
+Conversion failed!
+"
+aac_64k,True,1.000,0.746
+aac_128k,True,1.000,0.962
+aac_256k,True,1.000,0.962
